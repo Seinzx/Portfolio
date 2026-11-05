@@ -1,206 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#008080">
+  <meta name="description" content="Joshua Reyes Felix — IT student, developer, and technology enthusiast. Explore projects, skills, and contact information.">
+  <title>Seinzx — Portfolio</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
-
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">Portfolio</div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
+  <div class="boot-screen" id="boot-screen" role="status" aria-live="polite" aria-label="Starting Seinzx portfolio">
+    <section class="boot-dialog" aria-label="Windows startup">
+      <div class="boot-titlebar">
+        <span>Starting Seinzx...</span>
+        <span class="boot-close" aria-hidden="true">×</span>
+      </div>
+      <div class="boot-body">
+        <div class="boot-status"><span>Status:</span><span id="boot-message">Initializing desktop...</span></div>
+        <div class="boot-progress-row">
+          <div class="boot-progress-track" role="progressbar" aria-label="Portfolio loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="boot-progress">
+            <div class="boot-progress-fill" id="boot-progress-fill"></div>
+          </div>
+          <span class="boot-percent" id="boot-percent">0%</span>
         </div>
-    </header>
+        <div class="boot-footer"><span>SEINZX PORTFOLIO SYSTEM</span><span>Windows 98-style startup</span></div>
+      </div>
+    </section>
+  </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-    <div class="hero-container">
-        
-        <!-- Left Side Text Content -->
-        <div class="hero-text">
-            <h1 class="greeting">Hello<span class="dot">.</span></h1>
-            <div class="intro-line">
-                <span class="accent-dash"></span>
-                <h2>I'm <span class="name">Joshua Reyes Felix</span></h2>
-            </div>
-            <p class="subtitle">IT & Hardware Specialist</p>
-            
+  <!-- NavBar -->
+  <!---->
+  <header class="site-nav">
+    <a class="brand" href="#home" aria-label="Seinzx home"><span class="brand-icon"></span> SEINZX</a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#workspace">Projects</a>
+      <a href="#details">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-resume" href="mailto:felix.joshua416@gmail.com?subject=Resume%20Request">Get in touch</a>
+  </header>
 
-            <div class="hero-buttons">
-                <a href="#about" class="btn btn-outline">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                    View Portfolio
-                </a>
-            </div>
-        </div>
-
-        <!-- Right Side Image Block -->
-        <div class="hero-image">
-            <div class="polaroid-wrapper">
-                <!-- The hanging tape effect -->
-                <div class="tape"></div>
-        
-                <!-- The main photograph frame -->
-                <div class="polaroid-frame">
-                    <div class="photo-container">
-                        <img src="img/me.png" alt="Joshua Reyes Felix">
-                    </div>
-
-                     <!-- Photo Caption -->
-                    <div class="polaroid-caption"></div>
-                </div>
-            </div>
-        </div>
-
+  <!-- Window 1 -->
+  <!---->
+  <main class="desktop" id="home">
+    <div class="desktop-heading">
+      <span class="desktop-mark">SEINZX.EXE</span>
+      <span class="desktop-note">Personal workspace · Est. 2023</span>
     </div>
-    </section>
 
-    <!-- About & Skills Section -->
-    <section id="about" class="container">
-        <h2>About Me & Skills</h2>
-        <p class="about-text">I am a passionate technology professional dedicated to creating effective solutions, i also dedicate myself in creating creative arts of work! Here are some technologies I work with:</p>
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                Frontend Development
-                <span class="skill-subtext"> HTML5 / CSS / JS </span>
-            </div>
-
-            <div class="skill-card">
-                Backend & Systems
-                <span class="skill-subtext"> Apache / SQL / Firebase / PHP </span>
-            </div>
-
-            <div class="skill-card">
-                2D Game Development & UI/UX
-                <span class="skill-subtext"> Unity Engine / C# Scripting / Interactive Game Menus / Layout Usability </span>
-            </div>
-
-             <div class="skill-card">
-                 Asset Creation & Sound Design
-                <span class="skill-subtext"> Pixel Art / Sprite Animation Sheets / Custom Music Production / Audio Track Scrubbing </span>
-            </div>
-
-            <div class="skill-card">
-                Digital Production & Graphics
-                <span class="skill-subtext">Adobe Photoshop / Graphic Asset Layouts / Video Post-Production / Creative Brand Themes</span>
-            </div>
-            
-            <div class="skill-card">
-                 Systems & Hardware Architecture
-                <span class="skill-subtext"> Custom PC Assembly / Component Diagnostics/ Hardware Upgrades & Troubleshooting </span>
-            </div>
-
-            <div class="skill-card">
-                IT Operations 
-                <span class="skill-subtext"> Diagnostics / CLI Command Shell Execution / Local Network Cabling & Crimping</span>
-            </div>
-
+    <div class="profile-layout">
+      <aside class="window profile-window" aria-label="Profile">
+        <div class="titlebar">
+          <span class="titlebar-app"><span class="mini-app-icon">♟</span> User Profile</span>
+          <div class="window-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></div>
         </div>
-    </section>
-
-   <!-- Featured Projects Section with Images -->
-    <section id="projects" class="bg-alt">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <a href="https://arckei.github.io/Website-CyberGuard/" target="_blank" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="img/cyberguard.png" alt="CyberGuard Preview" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <div class="project-header">
-                            <span class="project-icon">💻</span>
-                            <h4>CyberGuard: Cybersecurity Learning Platform</h4>
-                        </div>
-                        <p>A gamified learning platform curated to tackle specific cybersecurity threats and topics.</p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Gamification</span>
-                            <span class="tech-tag">Web Security</span>
-                            <span class="tech-tag">Learning Platform</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="img/techsort.png" alt="TechSort Preview" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <div class="project-header">
-                            <span class="project-icon">📖</span>
-                            <h4>TechSort: Inventory & PoS System</h4>
-                        </div>
-                        <p>A custom Point of Sale application designed for local tech shops. Features live stock tracking, secure transaction logs, automated low-inventory alerts, and database tracking for sales history reporting. </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Backend Architecture</span>
-                            <span class="tech-tag">SQL Database</span>
-                            <span class="tech-tag">CRUD Logic</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="img/elyzium.png" alt="Elyzium Preview" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <div class="project-header">
-                            <span class="project-icon">🎮</span>
-                            <h4>Elyzium: Decendia</h4>
-                        </div>
-                        <p>A hooded nameless specter roams the remains of heaven and descends deep to hell to find answers.</p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Pixel</span>
-                            <span class="tech-tag">RPG</span>
-                            <span class="tech-tag">Dungeon-Crawler</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="window-content profile-content">
+          <div class="profile-photo-frame">
+            <img src="img/me.png" alt="Portrait of Joshua Reyes Felix">
+          </div>
+          <h1>Joshua Reyes Felix</h1>
+          <p class="profile-role">BSIT Student · Aspiring IT Professional</p>
+          <div class="status-line"><span class="status-dot"></span> Available for OJT opportunities</div>
+          <div class="sunken-panel profile-bio">
+            <h2>ABOUT ME</h2>
+            <p>Curious about how things work, from the hardware on a desk to the software running behind it. I enjoy building practical projects, troubleshooting technical problems, and learning through hands-on work.</p>
+          </div>
+          <div class="profile-links">
+            <a href="https://github.com/Seinzx" target="_blank" rel="noopener noreferrer"><span>◈</span> GitHub</a>
+            <a href="https://facebook.com/Seinzxy" target="_blank" rel="noopener noreferrer"><span>◈</span> Facebook</a>
+            <a href="mailto:felix.joshua416@gmail.com"><span>✉</span> Email</a>
+          </div>
+          <div class="profile-meta">
+            <div><span>LOCATION</span><strong>Bulacan, Philippines</strong></div>
+            <div><span>FOCUS</span><strong>IT Support · Development</strong></div>
+          </div>
         </div>
-    </section>
+      </aside>
 
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="container text-center">
-        <div class="contact-card">
-            <h2>Contacts</h2>
-            <p>I am currently open to internship opportunities and freelance technical jobs. If you like my work, let's talk!</p>
-            
-            <div class="contact-links">
-                <!-- Replace with your actual links -->
-                <a href="https://github.com/Seinzx" target="_blank" class="contact-icon-btn">GitHub</a>
-                <a href="https://Facebook.com/Seinzxy" target="_blank" class="contact-icon-btn">Facebook</a>
-                <a href="https://discord.gg/SeKaq8yf78" target="_blank" class="contact-icon-btn">Discord</a>
-                <a href="mailto:your.Xeenon357@gmail.com" class="btn contact-main-btn">Email Me</a>
-            </div>
+      <!-- Window 2 -->
+      <!-- Step 1: You Found the correct window -->
+      <section class="window workspace-window" id="workspace" aria-label="Portfolio workspace">
+        <div class="titlebar">
+          <span class="titlebar-app"><span class="mini-app-icon">▧</span> Seinzx — Portfolio Explorer</span>
+          <div class="window-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></div>
         </div>
+      <!-- Step 2: add a new button field in this div to add a new tab in window 2 remember the name of the data-tab.-->
+        <div class="tab-strip" role="tablist" aria-label="Portfolio sections">
+          <button class="app-tab active" id="tab-projects" role="tab" aria-selected="true" aria-controls="panel-projects" data-tab="projects">▣ Projects</button>
+          <button class="app-tab" id="tab-skills" role="tab" aria-selected="false" aria-controls="panel-skills" data-tab="skills">⚙ Skills</button>
+          <button class="app-tab" id="tab-journey" role="tab" aria-selected="false" aria-controls="panel-journey" data-tab="journey">▤ My Journey</button>
+        </div>
+        <div class="workspace-toolbar">
+          <span class="toolbar-label">Explore:</span>
+          <span class="address-field"><span>⌂</span> C:\Users\Joshua\Portfolio\<strong id="address-current">Projects</strong></span>
+          <span class="toolbar-hint">Select a tab to browse</span>
+        </div>
+      <!-- Step 3: add a new section for your new tab, just copy and paste 1 section, after this go back to the js file -->
+        <div class="workspace-panel">
+          <section class="tab-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
+            <div class="panel-heading">
+              <div><h2>Featured projects</h2><p>A few things I've built and worked on.</p></div>
+              <span class="item-count" id="project-count">03 ITEMS</span>
+            </div>
+            <div class="project-grid" id="project-grid"></div>
+          </section>
+
+          <section class="tab-panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" hidden>
+            <div class="panel-heading">
+              <div><h2>Skills & tools</h2><p>Technologies and practical areas I work with.</p></div>
+              <span class="item-count" id="skill-count"></span>
+            </div>
+            <div class="skills-grid" id="skills-grid"></div>
+          </section>
+
+          <section class="tab-panel" id="panel-journey" role="tabpanel" aria-labelledby="tab-journey" hidden>
+            <div class="panel-heading">
+              <div><h2>My journey</h2><p>Education, experience, and milestones.</p></div>
+              <span class="item-count">PROFILE</span>
+            </div>
+            <div class="timeline" id="timeline"></div>
+          </section>
+        </div>
+        <div class="window-statusbar"><span id="status-message">Ready</span><span>SEINZX PORTFOLIO</span></div>
+      </section>
+    </div>
+
+    <!-- Window 3 -->
+    <!---->
+    <section class="window lower-window" id="details">
+      <div class="titlebar">
+        <span class="titlebar-app"><span class="mini-app-icon">▤</span> More Information</span>
+        <div class="window-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></div>
+      </div>
+      <div class="lower-content">
+        <div class="info-block">
+          <span class="section-kicker">01 / WHAT I DO</span>
+          <h2>Practical tech, thoughtful solutions.</h2>
+          <p>My interests sit at the intersection of hardware, software, and user-focused problem solving. I like understanding the issue, finding a sensible fix, and making sure the result works.</p>
+        </div>
+        <div class="info-block quick-facts">
+          <span class="section-kicker">02 / QUICK FACTS</span>
+          <div class="fact-row"><span>Education</span><strong>BS Information Technology</strong></div>
+          <div class="fact-row"><span>Interests</span><strong>IT Support · Hardware · Cybersecurity</strong></div>
+          <div class="fact-row"><span>Currently</span><strong>Building projects & seeking OJT</strong></div>
+        </div>
+        <div class="info-block" id="contact">
+          <span class="section-kicker">03 / GET IN TOUCH</span>
+          <h2>Have something in mind?</h2>
+          <p>I'm open to internship opportunities, collaboration, and freelance technical work.</p>
+          <a class="classic-button" href="mailto:felix.joshua416@gmail.com">✉ Send me an email</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Joshua Reyes Felix. Built with pure HTML & CSS.</p>
+    <footer class="desktop-footer">
+      <span>© 2026 Joshua Reyes Felix</span>
+      <span>Built with HTML, CSS & JavaScript</span>
+      <a href="#home">Back to top ↑</a>
     </footer>
-
-
+  </main>
 </body>
 </html>
