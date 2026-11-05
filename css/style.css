@@ -280,6 +280,96 @@ button { font: inherit; }
 .desktop-footer a { color: #fff; }
 
 
+.certificate-preview {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid;
+    border-color: #ffffff #404040 #404040 #ffffff;
+    cursor: pointer;
+}
+.certificate-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.certificate-dialog {
+    width: min(850px, 90vw);
+    max-width: 850px;
+    max-height: 90vh;
+    padding: 0;
+    border: 3px solid;
+    border-color: #ffffff #404040 #404040 #ffffff;
+    background: #c0c0c0;
+    color: #000;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.35);
+}
+.certificate-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+.certificate-dialog .titlebar {
+    position: sticky;
+    top: 0;
+}
+.dialog-close {
+    width: 24px;
+    height: 22px;
+    border: 2px solid;
+    border-color: #ffffff #404040 #404040 #ffffff;
+    background: #c0c0c0;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+.certificate-dialog-content {
+    padding: 16px;
+}
+.certificate-dialog-content h2 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+.certificate-full-preview {
+    width: 100%;
+    height: 60vh;
+    max-height: 600px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #808080;
+    border: 2px solid;
+    border-color: #404040 #ffffff #ffffff #404040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+.certificate-full-preview img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.certificate-dialog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+    font-size: 11px;
+}
+
+
 /* Mobile */
 @media (max-width: 850px) {
   .profile-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); }

@@ -72,12 +72,29 @@ const portfolioData = {
     { date: "2023 — Present", title: "Freelance PC Repair & Maintenance", description: "Hands-on desktop assembly, laptop troubleshooting, Windows recovery, component upgrades, and software setup." },
     { date: "Project work", title: "TechSort — POS & Inventory", description: "Worked on a database-driven desktop application, contributing to system design, development, and team coordination." },
     { date: "Project work", title: "CyberGuard — Learning Platform", description: "Contributed to a gamified cybersecurity-awareness project focused on helping students understand online threats." }
+  ],
+  certificates: [
+    {
+      title: "Intro to Cybersecurity",
+      description: "Cisco Networking Academy",
+      image: "certs/cisco_intro_to_cybersecurity.png",
+      alt: "Cisco Intro to Cybersecurity preview",
+      tags: ["Cybersecurity"],
+    },
+    {
+      title: "Robotics Training and Workshop",
+      description: "Felta Techvoc Academy Inc.",
+      image: "certs/felta_robotics_training.png",
+      alt: "Felta Robotics Training and Workshop preview",
+      tags: ["Robotics"],
+    }
   ]
 };
 
 const projectGrid = document.querySelector("#project-grid");
 const skillsGrid = document.querySelector("#skills-grid");
 const timeline = document.querySelector("#timeline");
+const certificatesGrid = document.querySelector("#certificates-grid");
 
 function renderProjects() {
   projectGrid.innerHTML = portfolioData.projects.map((project) => {
@@ -92,6 +109,66 @@ function renderProjects() {
   }).join("");
   document.querySelector("#project-count").textContent = `${String(portfolioData.projects.length).padStart(2, "0")} ITEMS`;
 }
+function renderCertificates() {
+  certificatesGrid.innerHTML = portfolioData.certificates.map((cert, index) => {
+    const tags = (cert.tags || []).map(tag =>
+      `<span class="tech-tag">${escapeHTML(tag)}</span>`
+    ).join("");
+
+    return `
+      <article class="project-card certificate-card">
+        <button class="certificate-preview"
+                type="button"
+                data-certificate-index="${index}"
+                aria-label="Preview ${escapeAttribute(cert.title)}">
+          <img src="${escapeAttribute(cert.image)}"
+               alt="${escapeAttribute(cert.alt || cert.title)}"
+               loading="lazy">
+        </button>
+
+        <div class="project-info">
+          <h3>${escapeHTML(cert.title)}</h3>
+          <p>${escapeHTML(cert.description)}</p>
+        </div>
+
+        <div class="project-tags">${tags}</div>
+      </article>
+    `;
+  }).join("");
+
+  document.querySelector("#certificates-count").textContent =
+    `${String(portfolioData.certificates.length).padStart(2, "0")} ITEMS`;
+
+  certificatesGrid.querySelectorAll(".certificate-preview").forEach(button => {
+    button.addEventListener("click", () => {
+      const cert = portfolioData.certificates[Number(button.dataset.certificateIndex)];
+      openCertificate(cert);
+    });
+  });
+}
+const certificateDialog = document.querySelector("#certificate-dialog");
+
+function openCertificate(cert) {
+  document.querySelector("#certificate-dialog-title").textContent = cert.title;
+
+  const image = document.querySelector("#certificate-dialog-image");
+  image.src = cert.image;
+  image.alt = cert.alt || cert.title;
+
+  document.querySelector("#certificate-open-full").href = cert.image;
+
+  certificateDialog.showModal();
+}
+
+document.querySelector("#close-certificate").addEventListener("click", () => {
+  certificateDialog.close();
+});
+
+certificateDialog.addEventListener("click", event => {
+  if (event.target === certificateDialog) {
+    certificateDialog.close();
+  }
+});
 function renderSkills() {
   skillsGrid.innerHTML = portfolioData.skills.map(skill => `
     <article class="skill-card">
@@ -128,7 +205,7 @@ function escapeAttribute(value = "") { return escapeHTML(value); }
 /* After that the script should automatically render your new tab */
 const tabs = [...document.querySelectorAll(".app-tab")];
 const panels = [...document.querySelectorAll(".tab-panel")];
-const tabNames = { projects: "Projects", skills: "Skills", journey: "My Journey" };
+const tabNames = { projects: "Projects", skills: "Skills", journey: "My Journey", certificates: "My Certificates" };
 function activateTab(name, focus = false) {
   tabs.forEach(tab => {
     const active = tab.dataset.tab === name;
@@ -158,6 +235,7 @@ tabs.forEach((tab, index) => {
 renderProjects();
 renderSkills();
 renderJourney();
+renderCertificates();
 activateTab("projects");
 
 

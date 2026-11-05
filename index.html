@@ -92,6 +92,7 @@
           <button class="app-tab active" id="tab-projects" role="tab" aria-selected="true" aria-controls="panel-projects" data-tab="projects">▣ Projects</button>
           <button class="app-tab" id="tab-skills" role="tab" aria-selected="false" aria-controls="panel-skills" data-tab="skills">⚙ Skills</button>
           <button class="app-tab" id="tab-journey" role="tab" aria-selected="false" aria-controls="panel-journey" data-tab="journey">▤ My Journey</button>
+          <button class="app-tab" id="tab-certificates" role="tab" aria-selected="false" aria-controls="panel-certificates" data-tab="certificates">▤ Certificates</button>
         </div>
         <div class="workspace-toolbar">
           <span class="toolbar-label">Explore:</span>
@@ -122,6 +123,14 @@
               <span class="item-count">PROFILE</span>
             </div>
             <div class="timeline" id="timeline"></div>
+          </section>
+
+          <section class="tab-panel" id="panel-certificates" role="tabpanel" aria-labelledby="tab-certificates">
+            <div class="panel-heading">
+              <div><h2>Certificates</h2><p>A few things I've learned and acquired.</p></div>
+              <span class="item-count" id="certificates-count">02 ITEMS</span>
+            </div>
+            <div class="project-grid" id="certificates-grid"></div>
           </section>
         </div>
         <div class="window-statusbar"><span id="status-message">Ready</span><span>SEINZX PORTFOLIO</span></div>
@@ -162,5 +171,30 @@
       <a href="#home">Back to top ↑</a>
     </footer>
   </main>
+  <dialog id="certificate-dialog" class="certificate-dialog">
+  <div class="titlebar">
+    <span class="titlebar-app">
+      <span class="mini-app-icon">▤</span>
+      Certificate Viewer
+    </span>
+    <button class="dialog-close" id="close-certificate" aria-label="Close">×</button>
+  </div>
+
+  <div class="certificate-dialog-content">
+    <h2 id="certificate-dialog-title">Certificate Preview</h2>
+
+    <div class="certificate-full-preview">
+      <img id="certificate-dialog-image" src="" alt="">
+    </div>
+
+    <div class="certificate-dialog-footer">
+      <span>DOCUMENT PREVIEW</span>
+      <a id="certificate-open-full" class="classic-button"
+         href="#" target="_blank" rel="noopener noreferrer">
+        Open Full Certificate ↗
+      </a>
+    </div>
+  </div>
+</dialog>
 </body>
 </html>
